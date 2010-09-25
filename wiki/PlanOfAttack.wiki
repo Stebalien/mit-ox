@@ -1,27 +1,27 @@
 #summary Plan of Attack
 #labels Featured
 
-1. Design sitemap
-2. Design site look
-3. create simple mockups
-4. rinse/repeat
+# Design sitemap
+# Design site look
+# create simple mockups
+# rinse/repeat
 
 -- 10/5(7) presentation
 
-5. Make product pages
-6. Make search/cat pages
-7. Make Homepage
+# Make product pages
+# Make search/cat pages
+# Make Homepage
 
-5. Design information architecture
-6. Create base classes
-7. Create sub classes.
+# Design information architecture
+# Create base classes
+# Create sub classes.
 
-8. Integrate frontend and backend.
-9. First Bug/usability/**browsers**
+# Integrate frontend and backend.
+# First Bug/usability/**browsers**
 
 -- 11/9
 
-10. Second bug round
+# Second bug round
 
 -- 11/30 Final Project (oral)
 -- 12/10 Final Written
