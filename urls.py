@@ -1,16 +1,20 @@
 from django.conf.urls.defaults import *
+from settings import MEDIA_ROOT
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^MOX/', include('MOX.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    # Homepage
+    (r'^$|index\.[a-zA-Z0-9]{1,4}', 'MOX.homepage.views.index'),
+    # Images (THIS IS TEMPORARY, FIXME) **!!&&*!@*(##(*$&@#(*$&(&@*(@*&#&(
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve',
+             {'document_root': MEDIA_ROOT}),
+    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
+    # to INSTALLED_APPS to enable admin documentation:
+    #(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
 )
