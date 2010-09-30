@@ -1,0 +1,5 @@
+#summary Sketches of the homepage
+#labels Sketch,Homepage
+
+== Version 1 ==
+[http://mit-ox.googlecode.com/svn/wiki/img/home-sketch/1.svg]
