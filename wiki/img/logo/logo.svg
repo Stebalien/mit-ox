@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1052.3622"
+   height="744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.0 r9654"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/steb/Documents/MIT/MOX/poster/logo.png"
+   inkscape:export-xdpi="68.359932"
+   inkscape:export-ydpi="68.359932">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="420.76062"
+     inkscape:cy="436.01758"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1278"
+     inkscape:window-height="761"
+     inkscape:window-x="0"
+     inkscape:window-y="19"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.2677)">
+    <rect
+       style="fill:#8c0000;fill-opacity:1;stroke:none"
+       id="rect3061"
+       width="274.54602"
+       height="4.2703762"
+       x="-737.77307"
+       y="517.22699"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-size:18.96647072px;font-style:normal;font-weight:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="561.31244"
+       y="583.23199"
+       id="text2985"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan2987"
+         x="561.31244"
+         y="583.23199"
+         style="font-size:24.65641022px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:4.26745605px;writing-mode:lr-tb;text-anchor:start;fill:#585858;fill-opacity:1;font-family:Optima;-inkscape-font-specification:Optima">MIT ONLINE</tspan><tspan
+         sodipodi:role="line"
+         x="561.31244"
+         y="607.88843"
+         style="font-size:24.65641022px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:6.63826466px;writing-mode:lr-tb;text-anchor:start;fill:#585858;fill-opacity:1;font-family:Optima;-inkscape-font-specification:Optima"
+         id="tspan2989">EXCHANGE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="462"
+       y="560.36218"
+       id="text2991"
+       sodipodi:linespacing="100%"
+       sodipodi:insensitive="true"><tspan
+         sodipodi:role="line"
+         x="462"
+         y="560.36218"
+         style="font-size:120px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Optima;-inkscape-font-specification:Optima"
+         id="tspan3001">MOX</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3011"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Bitstream Vera Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3013"><rect
+           id="rect3015"
+           width="10"
+           height="52"
+           x="-46"
+           y="428.09448" /></flowRegion><flowPara
+         id="flowPara3017" /></flowRoot>  </g>
+</svg>
