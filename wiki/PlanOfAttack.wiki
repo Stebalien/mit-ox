@@ -1,7 +1,7 @@
 #summary Plan of Attack
 #labels Featured
 === Everyone ===
-  ~~# Design sitemap~~
+  # ~~Design sitemap~~
   # Design site look
   # create simple mockups
   # rinse/repeat
@@ -13,7 +13,7 @@
   # Make search/cat pages
   # Make Homepage
 === Backend ===
-  ~~# Design information architecture~~
+  # ~~Design information architecture~~
   # Create base classes
   # Create sub classes.
 === Integration ===
