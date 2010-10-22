@@ -11,17 +11,17 @@
   * location
   * post status (valid, expired, deleted, sold)
 
-||class Category||
+||class||Category||
 
-||class ClassMaterials extends Category||
-||class Transportation extends Category||
-||class Entertainment extends Category||
-||class Textbooks extends Category||
-||class Food extends Category||
-||class Services extends Category||
-||class Clothes extends Category||
-||class Miscellaneous extends Category||
-||class Electronics extends Category||
+||class||ClassMaterials||extends||Category||
+||class||Transportation||extends||Category||
+||class||Entertainment||extends||Category||
+||class||Textbooks||extends||Category||
+||class||Food||extends||Category||
+||class||Services||extends||Category||
+||class||Clothes||extends||Category||
+||class||Miscellaneous||extends||Category||
+||class||Electronics||extends||Category||
 
 class Person
   * name
