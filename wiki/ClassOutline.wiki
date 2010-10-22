@@ -1,4 +1,4 @@
-||class Item||
+===class Item===
   * name
   * category
   * ID
@@ -11,8 +11,7 @@
   * location
   * post status (valid, expired, deleted, sold)
 
-||class||Category||
-
+===class Category===
 ||class||ClassMaterials||extends||Category||
 ||class||Transportation||extends||Category||
 ||class||Entertainment||extends||Category||
@@ -23,7 +22,7 @@
 ||class||Miscellaneous||extends||Category||
 ||class||Electronics||extends||Category||
 
-class Person
+===class Person===
   * name
   * location
   * role (student/faculty)
@@ -32,7 +31,7 @@ class Person
   * Prof pic!
   * Contact (separate class?)
 
-class Contact
+===class Contact===
   * mit email
   * alt email
   * cell number
