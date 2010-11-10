@@ -1,0 +1,63 @@
+body {
+    text-align: center;
+}
+#footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    padding: 0px;
+}
+
+#logo, #searchbox {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 5px;
+    margin-top: 0px;
+}
+
+#logo {
+    top: 130px;
+    width: 300px;
+    margin: 20px auto;
+}
+
+#searchbox {
+    top: 270px;
+    width: 210px;
+    margin: 5px auto;
+}
+
+#searchbox input:hover, #searchbox input:focus {
+    opacity: 1.0;
+}
+#searchbox input {
+    border: 1px solid gray;
+    text-align: center;
+    opacity: 0.5;
+    width: 210px;
+}
+
+#buybutton, #sellbutton {
+    position: absolute;
+    padding: 5px;
+    top: 300px;
+}
+#buybutton {
+    margin-left: 50%;
+    left: 0px;
+}
+#sellbutton {
+    margin-right: 50%;
+    right: 0px;
+}
+#buybutton input, #sellbutton input {
+    border-style: none;
+    background: none;
+    outline: none;
+}
+
+

@@ -1,0 +1,10 @@
+{% extends "item_templates/generic.html" %}
+{% block properties %}
+{{block.super}}
+{% if item.make %}
+    <tr>
+        <th>Make:</th>
+        <td>{{item.make}}</td>
+    </tr>
+{% endif %}
+{% endblock %}

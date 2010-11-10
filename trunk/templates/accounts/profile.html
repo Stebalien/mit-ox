@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}User Profile{% endblock %}
+{% block heading %}Account{% endblock %}
+{% block subheading %}Edit Profile{% endblock %}
+{% block content %}
+<style>
+    div.center {
+        width: 400px;
+    }
+</style>
+{% if saved %}
+<div id="saved" class="center shadowbox">
+    {% spaceless %}
+    Your profile has been saved. 
+    {% if goback %}
+    Go <a href="{{goback}}">back to browsing</a>
+    {% endif %}
+    {% endspaceless %}
+</div>
+{% endif %}
+<div id="profile" class="center shadowbox">
+    <form method="POST">
+        {% if goback %}
+        <input type="hidden" name="goback" value="{{goback}}" >
+        {% endif %}
+        {% csrf_token %}
+        {{userform.as_p}}
+        {{profileform.as_p}}
+        <input type="submit" value="Save">
+    </form>
+</div>
+{% endblock %}
+
