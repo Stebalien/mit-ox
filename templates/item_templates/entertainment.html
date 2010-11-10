@@ -1,0 +1,22 @@
+{% extends "item_templates/generic.html" %}
+{% block properties %}
+{{block.super}}
+{% if item.media %}
+    <tr>
+        <th>Media:</th>
+        <td>{{item.get_media_display}}</td>
+    </tr>
+{% endif %}
+{% if item.title %}
+    <tr>
+        <th>Title:</th>
+        <td>{{item.title}}</td>
+    </tr>
+{% endif %}
+{% if item.author %}
+    <tr>
+        <th>Author:</th>
+        <td>{{item.author}}</td>
+    </tr>
+{% endif %}
+{% endblock %}

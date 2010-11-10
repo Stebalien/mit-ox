@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block css %}
+    <link rel="stylesheet" href="/media/results/results.css">
+{% endblock %}
+{% block title %}{{mode|capfirst}}ing {{category}}{% endblock %}
+
+{% block heading %}{{mode|capfirst}}{% endblock %}
+{% block subheading %}
+    {% if query %}
+        Looking for:
+        {{query}}
+        {% if category %}
+            in
+        {% endif %}
+    {% endif %}
+    {{ category|capfirst }}
+    {# FIXME: does not work for Class Materials #}
+{% endblock subheading %}
+{% block sidebar%}
+    <div class="shadowbox" id="sidebar">
+    <ul>
+        {% ifequal mode "sell" %}
+        <lh>Offers</lh>
+        {% else %}
+        <lh>Claims</lh>
+        {% endifequal %}
+        {% spaceless %}
+        <li
+            {% ifequal "0" claims_filter %}
+            selected
+            {% endifequal %}
+            >
+            <a href="{{base_url}}&category={{category}}&condition={{condition_filter}}&price={{price_filter}}&claims=0">
+            None
+            </a>
+        </li>
+        <li
+            {% ifequal "3" claims_filter %}
+            selected
+            {% endifequal %}
+            >
+            <a href="{{base_url}}&category={{category}}&condition={{condition_filter}}&price={{price_filter}}&claims=3">
+            &le; 4
+            </a>
+        </li>
+        <li
+            {% ifequal "-1" claims_filter %}
+            selected
+            {% endifequal %}
+            >
+            <a href="{{base_url}}&category={{category}}&condition={{condition_filter}}&price={{price_filter}}&claims=-1">
+            Any
+            </a>
+        </li>
+        {% endspaceless %}
+    </ul>
+    <ul>
+        <lh>Price</lh>
+        {% spaceless %}
+        <li
+            {% ifequal "0" price_filter %}
+            selected
+            {% endifequal %}
+            >
+            <a href="{{base_url}}&category={{category}}&condition={{condition_filter}}&price=0&claims={{claims_filter}}">
+            Free
+            </a>
+        </li>
+        <li
+            {% ifequal "50" price_filter %}
+            selected
+            {% endifequal %}
+            >
+            <a href="{{base_url}}&category={{category}}&condition={{condition_filter}}&price=50&claims={{claims_filter}}">
+            &le; $50
+            </a>
+        </li>
+        <li
+            {% ifequal "100" price_filter %}
+            selected
+            {% endifequal %}
+            >
+            <a href="{{base_url}}&category={{category}}&condition={{condition_filter}}&price=100&claims={{claims_filter}}">
+            &le; $100
+            </a>
+        </li>
+        <li
+            {% ifequal "500" price_filter %}
+            selected
+            {% endifequal %}
+            >
+            <a href="{{base_url}}&category={{category}}&condition={{condition_filter}}&price=500&claims={{claims_filter}}">
+            &le; $500
+            </a>
+        </li>
+        <li
+            {% ifequal "-1" price_filter %}
+            selected
+            {% endifequal %}
+            >
+            <a href="{{base_url}}&category={{category}}&condition={{condition_filter}}&price=-1&claims={{claims_filter}}">
+            Any Price
+            </a>
+        </li>
+        {% endspaceless %}
+    </ul>
+    <ul>
+        <lh>Condition (or better)</lh>
+        {% spaceless %}
+        {% for condition in model.CONDITION_CHOICES %}
+        <li
+            {% ifequal condition.0 condition_filter %}
+            selected
+            {% endifequal %}
+            >
+            <a href="{{base_url}}&category={{category}}&condition={{condition.0}}&price={{price_filter}}&claims={{claims_filter}}">
+            {{condition.1}}
+            </a>
+        </li>
+        {% endfor %}
+        {% endspaceless %}
+    </ul>
+    <ul>
+        <lh>Category</lh>
+        {% spaceless %}
+        <li
+            {% if not category %}
+            selected
+            {% endif %}
+            >
+            <a href="{{base_url}}&price={{price_filter}}&claims={{claims_filter}}">
+                All
+            </a>
+        </li>
+        {% for cat in model.CATEGORY_CHOICES %}
+        <li
+            {% ifequal cat.0 category %}
+            selected
+            {% endifequal %}
+            >
+            <a href="{{base_url}}&category={{cat.0}}&price={{price_filter}}&claims={{claims_filter}}">
+                {{cat.1}}
+            </a>
+        </li>
+        {% endfor %}
+        {% endspaceless %}
+    </ul>
+
+    {% comment %}
+    <ul>
+        <lh>Tags</lh>
+        <p>
+        {% for tag in tags %}
+        <font size="{{tag.font_size}}"><a href="{% url search mode %}?tags={{tag.name}}">{{tag.name}}</a></font>
+        {# THIS ISN'T THE CORRECT WAY TO DO THIS #}
+        {% endfor %}
+        </p>
+    </ul>
+    {% endcomment %}
+    </div>
+{% endblock %}
+{% block content %}
+{% if claimed_item %}
+<div id="confirmbox" class="shadowbox center" style="max-width: 500px">
+    {% if claimed_item.photo %}
+    <img class="border" style="float:left; margin-right: 10px;" src="{% thumbnail claimed_item.photo 100x100 %}" />
+    {% endif %}
+    <p style="vertical-align: center;">You have just {% ifequal claimed_item.mode "buy" %}<i>Claimed{% else %}offered to <i>Sell{% endifequal %}</i> <b>{{claimed_item.name}}</b>. Both you and <b>{{claimed_item.owner.get_full_name}}</b> have been sent each other's contact information so that you can arrange an exchange.
+    </p>
+    <br style="clear: both" />
+</div>
+{% endif %}
+{% for item in items.object_list %}
+    {% include item.template %}
+{% empty %}
+<div class="shadowbox">
+Sorry, no one appears to be {% ifequal mode "sell" %}buying{% else %}selling{% endifequal %} that right now. You should <a href="{% if category %}{% url additem mode category %}{% else %}{% url additem_choose_category mode %}{% endif %}">add</a> it.
+</div>
+{% endfor %}
+{% if items and not items.has_next %}
+<div class="shadowbox">
+    No luck? <a href="{% if category %}{% url additem mode category %}{% else %}{% url additem_choose_category mode %}{% endif %}">{% ifequal mode "sell" %}Post an ad{% else %}Make a request{% endifequal %}</a>.
+</div>
+{% endif %}
+{% endblock content %}
+{% block pagination %}
+{% if items %}
+<div class="pagination">
+    <span class="step-links">
+        {% if items.has_previous %}
+            <a href="{{base_url}}&condition={{condition_filter}}&price={{price_filter}}&claims={{claims_filter}}&page={{ items.previous_page_number }}">previous</a>
+        {% endif %}
+        {% if items.has_next %}
+            <a href="{{base_url}}&condition={{condition_filter}}&price={{price_filter}}&claims={{claims_filter}}&page={{ items.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+{% endif %}
+{% endblock %}

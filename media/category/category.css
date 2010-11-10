@@ -1,0 +1,39 @@
+#categories {
+    position: relative;
+    padding: 0px;
+    right: 0px;
+    left: 0px;
+    width: 660px;
+    margin: 0 auto;
+    display: table;
+}
+
+#categories > div{
+    display: table-row;
+}
+
+.block {
+    display: table-cell;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 200px;
+    height: 200px;
+}
+.block_content {
+    margin: 20px;
+    padding: 1px 10px;
+    height: 100%;
+}
+.block_content img {
+    position: relative;
+    margin: 25px;
+    width: 100px;
+    height: 100px;
+    border-style: none;
+}
+.block_content h4 {
+    position: relative;
+    text-align: center;
+}
+

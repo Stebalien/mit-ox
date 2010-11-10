@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}{{mode|capfirst}}{% endblock %}
+{% block css %}<link rel="stylesheet" href="/media/category/category.css">{% endblock %}
+{% block heading %}{{mode|capfirst}}{% endblock %}
+{% block subheading %}Categories{% endblock %}
+{% block content %}
+    <div class="center shadowbox">
+        <a href="{% url search mode %}">Browse All Items</a>
+    </div>
+    <ul id="categories">
+        <div>
+            <li class="block">
+                <a href="{% url search mode %}?category=materials">
+                    <div class="block_content shadowbox">
+                        <img alt="Class Materials" width="100px" src="/media/category/icons/materials.png" />
+                        <h4 class="black">Class Materials</h4>
+                    </div>
+                </a>
+            </li>
+            <li class="block">
+                <a href="{% url search mode %}?category=cloths">
+                    <div class="block_content shadowbox">
+                        <img alt="Cloths" width="100px" src="/media/category/icons/cloths.png" />
+                        <h4 class="black">Cloths</h4>
+                    </div>
+                </a>
+            </li>
+            <li class="block">
+                <a href="{% url search mode %}?category=electronics">
+                    <div class="block_content shadowbox">
+                        <img alt="Electronics" width="100px" src="/media/category/icons/electronics.png" />
+                        <h4 class="black">Electronics</h4>
+                    </div>
+                </a>
+            </li>
+        </div>
+        <div>
+            <li class="block">
+                <a href="{% url search mode %}?category=entertainment">
+                    <div class="block_content shadowbox">
+                        <img alt="Entertainment" width="100px" src="/media/category/icons/entertainment.png" />
+                        <h4 class="black">Entertainment</h4>
+                    </div>
+                </a>
+            </li>
+            <li class="block">
+                <a href="{% url search mode %}?category=food">
+                    <div class="block_content shadowbox">
+                        <img alt="Food" width="100px" src="/media/category/icons/food.png" />
+                        <h4 class="black">Food</h4>
+                    </div>
+                </a>
+            </li>
+            <li class="block">
+                <a href="{% url search mode %}?category=miscellaneous">
+                    <div class="block_content shadowbox">
+                        <img alt="Miscellaneous" width="100px" src="/media/category/icons/miscellaneous.png" />
+                        <h4 class="black">Miscellaneous</h4>
+                    </div>
+                </a>
+            </li>
+        </div>
+        <div>
+            <li class="block">
+                <a href="{% url search mode %}?category=services">
+                    <div class="block_content shadowbox">
+                        <img alt="Services" width="100px" src="/media/category/icons/services.png" />
+                        <h4 class="black">Services</h4>
+                    </div>
+                </a>
+            </li>
+            <li class="block">
+                <a href="{% url search mode %}?category=textbooks">
+                    <div class="block_content shadowbox">
+                        <img alt="Textbooks" width="100px" src="/media/category/icons/textbooks.png" />
+                        <h4 class="black">Textbooks</h4>
+                    </div>
+                </a>
+            </li>
+            <li class="block">
+                <a href="{% url search mode %}?category=transportation">
+                    <div class="block_content shadowbox">
+                        <img alt="Transportation" width="100px" src="/media/category/icons/transportation.png" />
+                        <h4 class="black">Transportation</h4>
+                    </div>
+                </a>
+            </li>
+        </div>
+    </ul>
+{% endblock %}

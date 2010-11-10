@@ -1,0 +1,54 @@
+{% load thumbnail %}
+<div class="shadowbox">
+    <div class="left medgray border">
+        {% if item.photo %}
+        <img src="{% thumbnail item.photo 100x100 %}" />
+        {% endif %}
+        <table class="properties" >
+        {% block properties %}
+            <tr>
+                <th>Price:</th>
+                <td>{% ifequal item.price 0 %}Free{% else %}${{item.price|stringformat:".2f"}}{% endifequal %}</td>
+            </tr>
+            {% if item.condition %}
+            <tr>
+                <th>Condition:</th>
+                <td>{{item.get_condition_display}}</td>
+            </tr>
+            {% endif %}
+        {% endblock properties %}
+        </table>
+    </div>
+    <table class="right medgray border">
+        <tr>
+            <th>Post Date:</th>
+            <td>{{item.date|date:"SHORT_DATE_FORMAT"}}</td>
+        </tr>
+        <tr class="{% ifequal item.customers.count 0 %}green{% else %}red{% endifequal %}">
+            {% ifequal mode "sell" %}
+            <th>Offers:</th>
+            {% else %}
+            <th>Claims:</th>
+            {% endifequal %}
+            <td>{{item.claims}}</td>
+        </tr>
+    </table>
+    <div class="info">
+        <h3>{{item.name}}</h3>
+        <form action="{{request.get_full_path}}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="pk" value="{{item.pk}}">
+        <input type="submit" class="white shadow" value={% ifequal mode "sell" %}Sell{% else %}Claim{% endifequal %}></form>
+        <p>
+            {{item.description}}
+        </p>
+    </div>
+    <ul class="hlist tags">
+        <li> test </li>
+    {% comment %}
+        {% for tag in item.tags %}
+        <li><a href="#tag">{{tag.name}}</a></li>{# CLICKING ON THIS SHOULD FILTER FOR THIS TAG #}
+        {% endfor %}
+    {% endcomment %}
+    </ul>
+</div>

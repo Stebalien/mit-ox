@@ -4,7 +4,11 @@
 # Get the root folder
 import os.path
 import sys
+
 ROOT = sys.path[0]
+
+DJAPIAN_DATABASE_PATH = os.path.join(ROOT, "site_index/")
+FORCE_LOWERCASE_TAGS = True
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -12,8 +16,10 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
      ('Steven Allen', 'steb@mit.edu'),
 )
+AUTH_PROFILE_MODULE = 'accounts.Profile'
 
 MANAGERS = ADMINS
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DATABASES = {
     'default': {
@@ -81,7 +87,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'MOX.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -96,7 +102,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    'MOX.homepage',
+    'djapian',
+    'thumbnail',
+    'tagging',
+    'homepage',
+    'exchange',
+    'accounts',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
 )

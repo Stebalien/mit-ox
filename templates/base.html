@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+{% block head %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>MOX - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/media/global.css">
+    {% block css %}{% endblock %}
+    <script type="text/javascript" src="/media/jquery/jquery-1.4.2.min.js"></script>
+    {% block javascript %}{% endblock %}
+{% endblock %}
+</head>
+<body>
+{% block body %}
+    <div id="header" class="lightgray">
+        {% block header %}
+        <a href="/"><img alt="MOX" id="logo" src="/media/logo.png" /></a>
+        <div id="title">
+            {% spaceless %}
+            <h1>{% block heading %}{% endblock %}</h1>
+            <h2>{% block subheading %}{% endblock %}</h2>
+            {% endspaceless %}
+        </div>
+        <ul class="hlist">
+        {% block header_actions %}
+            {% if user.is_authenticated %}
+            <li><a href="{% if category %}{% url additem mode category %}{% else %}{% url additem_choose_category mode|default:"buy" %}{% endif %}">Add Item</a></li>
+            {#<li><a href="{% url transactions %}">Transactions</a></li>#}
+            <li><a href="{% url profile %}">Profile</a></li>
+            <li><a href="{% url logout %}">Logout</a></li>
+            {% endif %}
+        {% endblock %}
+        </ul>
+        {% block search %}
+        {% if mode %}
+        <form action="search">
+        {{searchform.as_table}}
+        <input type="submit" value="Search">
+        </form>
+        {% endif %}
+        {% endblock %}
+        {% endblock %}
+    </div>
+    {% block sidebar %}
+    {% endblock sidebar %}
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    {% block buysell %}
+    {% if mode %}
+    <div id="buysell">
+        <a id="sell" href="{% url categories "sell" %}"><img src="/media/sell-small.png" alt="Goto Sell"></a>  
+        <a id="buy" href="{% url categories "buy" %}"><img src="/media/buy-small.png" alt="Goto Buy"></a>  
+        <style>
+            #{{mode}} img {
+                width: 25px;
+                margin-bottom: 4px;
+                opacity: 0.4 !important;
+            }
+        </style>
+    </div>
+    {% endif %}
+    {% endblock buysell %}
+{% block pagination %}
+{% endblock %}
+    <ul class="hlist" id="footer">
+        {% block footer %}
+        <li><a href="{% url about %}">About</a></li>
+        <li><a href="{% url contact %}">Contact Us</a></li>
+        <li><a href="{% url faq %}">FAQ</a></li>
+        {% endblock footer %}
+    </ul>
+{% endblock %}
+</body>
+</html>

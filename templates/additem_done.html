@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{mode|capfirst}} item - Done{% endblock %}
+{% load thumbnail %}
+{% block heading %}{{mode|capfirst}} new item{% endblock %}
+{% block subheading %}{{mode|capfirst}}ing {{item.name}} in {{category}}{% endblock %}
+{% block content %}
+<style>
+    div.center {
+        width: 200px;
+    }
+</style>
+<div class="center shadowbox">
+    <img src="{% thumbnail item.photo 200x200 %}" />
+    <p>You are now {{mode}}ing <b>{{item.name}}</b> for <b>${{item.price|stringformat:".02f"}}</b> in {{category}}.</p>
+</div>
+{% endblock %}

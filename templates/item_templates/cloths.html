@@ -1,0 +1,16 @@
+{% extends "item_templates/generic.html" %}
+{% block properties %}
+{{block.super}}
+{% if item.gender %}
+    <tr>
+        <th>Gender:</th>
+        <td>{{item.get_gender_display}}</td>
+    </tr>
+{% endif %}
+{% if item.size %}
+    <tr>
+        <th>Size:</th>
+        <td>{{item.get_size_display}}</td>
+    </tr>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,97 @@
+
+#content > div {
+    padding: 10px;
+    border: 1px solid gray;
+    margin-bottom: 20px;
+}
+#content {
+    margin: 20px 170px;
+}
+
+.left {
+    float: left;
+    margin: 10px;
+    padding: 5px;
+}
+.left img {
+    border: 1px solid gray;
+    width: 100px;
+    max-height: 200px;
+    position: relative;
+    margin: auto;
+    display: table;
+}
+.info {
+    margin-right: 100px;
+    margin-top: 1em;
+    min-width: 500px;
+}
+.info h3 {
+    margin: 0;
+    display: inline;
+}
+.info input, .info span {
+    background: #008ade; 
+    -moz-border-radius: 5px;
+    border-radius: 4px;
+    padding: 5px;
+    left: 10px;
+    top: -4px;
+    position: relative;
+    -moz-appearance: none;
+}
+.info span{
+    color: white;
+    background: gray;
+}
+.info input:hover {
+    background: #0079cd;
+}
+.info input:focus:after {
+    content: "ed";
+}
+.info input:focus {
+    background: gray;
+}
+.info form {
+    display: inline;
+}
+.right {
+    padding: 5px;
+    float: right;
+}
+.tags {
+    clear: both;
+    color: gray;
+    bottom: -15px;
+    right: 0px;
+    position: relative;
+    text-align: right;
+}
+.tags a {
+    color: #666;
+}
+.properties {
+    width: 200px;
+}
+.properties * {
+    text-align: left;
+    vertical-align: top;
+}
+.right {
+    text-align: left;
+}
+.right tr.red {
+    color: red;
+}
+
+.right tr.green {
+    color: green;
+}
+
+.pagination {
+    position: relative;
+    bottom: -40px;
+    text-align: center;
+    width: 100%
+}
